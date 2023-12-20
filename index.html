@@ -11,6 +11,7 @@
         <nav>
             <img src="images/cat.png" class="logo">
             <ul>
+                <li><a href="#">Home</a></li>
                 <li><a href="#">GitHub</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Projects</a></li>
@@ -31,13 +32,63 @@
             <div class = "about-col-2"></div>
                 <h1 class="sub-title">About Me</h1>
                 <p> I am a computer science major at WTAMU </p>
-
             <div class="tab-titles">
-
+                <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                <p class="tab-links" onclick="opentab('Education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="Skills">
+                <ul>
+                    <li><span>Front End</span><br>Design stuff</li>
+                    <li><span>Back End</span><br>Design stuff</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="Experience">
+                <ul>
+                    <li><span>2020</span><br>Data Science Intern at Amarillo College</li>
+                    <li><span>2023</span><br>IT Intern at Education Credit Union</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="Education">
+                <ul>
+                    <li><span>West Texas A&M</span><br>Bachelors in Computer Science<br>Minor in Mathamatics</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
+<!------------------portfolio------------- -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="project-list">
+            <div class="project">
+                <img src="images/cat.png">
+            </div>
+            <div class="project">
+                <img src="images/cat.png">
+            </div>
+            <div class="project">
+                <img src="images/cat.png">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
 
 </body>
 
